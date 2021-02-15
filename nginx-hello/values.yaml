@@ -1,0 +1,2 @@
+nginx_image: shiwaforce/openshift-nginx-hello
+nginx_url: ngnix-hello.testcluster.io # change it

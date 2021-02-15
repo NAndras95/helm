@@ -1,0 +1,35 @@
+apiVersion: {{ include "common.capabilities.deployment.apiVersion" . }}
+kind: Deployment
+metadata:
+  name: {{ template "nginx-hello.fullname" . }}-nginx-deployment
+  labels:
+    app: "nginx"
+    chart: {{ template "nginx-hello.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: "nginx"
+      chart: {{ template "nginx-hello.chart" . }}
+      release: {{ .Release.Name }}
+      heritage: {{ .Release.Service }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nginx
+        chart: {{ template "nginx-hello.chart" . }}
+        release: {{ .Release.Name }}
+        heritage: {{ .Release.Service }}
+    spec:
+      containers:
+      - name: nginx-img
+        image: {{ .Values.nginx_image }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          protocol: TCP

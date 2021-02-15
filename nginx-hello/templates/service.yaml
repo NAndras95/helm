@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "nginx-hello.fullname" . }}-nginx-service
+  labels:
+    app: "nginx"
+    chart: {{ template "nginx-hello.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  ports:
+  - name: "http-nginx"
+    port: 8080
+  selector:
+    app: "nginx"
+    chart: {{ template "nginx-hello.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
