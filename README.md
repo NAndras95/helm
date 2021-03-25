@@ -11,3 +11,5 @@ helm upgrade --install -f my-values.yaml --set name=nginx-hello nginx-hello ./ng
 ```
 helm upgrade --install -f my-values.yaml --set name=universal universal ./universal
 ```
+**ToDo**
+- test this chart with different applications
