@@ -7,6 +7,7 @@ helm upgrade --install -f my-values.yaml --set name=nginx-hello nginx-hello ./ng
 ```
 
 ### Universal (WIP)
+**Usage**
 ```
 helm upgrade --install -f my-values.yaml --set name=universal universal ./universal
 ```
