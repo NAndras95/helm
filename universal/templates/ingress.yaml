@@ -1,0 +1,23 @@
+{{- if .Values.ingress.enabled }}
+{{- $fullName := include "universal.fullname" . -}}
+apiVersion: {{ include "common.capabilities.ingress.apiVersion" . }}
+kind: Ingress
+metadata:
+  name: {{ template "universal.fullname" . }}-universal-ingress
+  labels:
+    app: "universal"
+    chart: {{ template "universal.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - host: "{{ .Values.ingress.hostname }}"
+      http:
+        paths:
+          - path: /(.*)
+            backend:
+              serviceName: {{ template "universal.fullname" . }}-universal-service
+              servicePort: {{ .Values.app.port }}
+{{- end }}

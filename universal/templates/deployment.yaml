@@ -1,0 +1,39 @@
+apiVersion: {{ include "common.capabilities.deployment.apiVersion" . }}
+kind: Deployment
+metadata:
+  name: {{ template "universal.fullname" . }}-universal-deployment
+  labels:
+    app: "universal"
+    chart: {{ template "universal.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: "universal"
+      chart: {{ template "universal.chart" . }}
+      release: {{ .Release.Name }}
+      heritage: {{ .Release.Service }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: universal
+        chart: {{ template "universal.chart" . }}
+        release: {{ .Release.Name }}
+        heritage: {{ .Release.Service }}
+    spec:
+{{- if .Values.secret.enabled }}
+      imagePullSecrets:
+        - name: {{ .Values.secret.name }}
+{{- end }}
+      containers:
+      - name: universal-img
+        image: {{ .Values.app.image }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: {{ .Values.app.port }}
+          protocol: TCP

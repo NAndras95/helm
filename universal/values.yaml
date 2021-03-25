@@ -1,0 +1,11 @@
+app:
+  port: 8080 # port
+  image: repository/image:tag
+
+secret:
+  enabled: false
+  name: secret-name
+
+ingress:
+  enabled: false
+  hostname: universalchart.com # change it
