@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ template "universal.fullname" . }}-universal-ingress
+  name: {{ template "universal.fullname" . }}-universal-pvc
   labels:
     app: "universal"
     chart: {{ template "universal.chart" . }}
