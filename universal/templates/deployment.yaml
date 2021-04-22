@@ -37,3 +37,15 @@ spec:
         ports:
         - containerPort: {{ .Values.app.port }}
           protocol: TCP
+        volumeMounts:
+{{- if .Values.pvc.enabled }}
+        - name: "{{ template "universal.fullname" . }}-universal-pvc"
+          mountPath: "{{ .Values.pvc.mountPath }}"
+          {{- if .Values.pvc.subPath }}
+          subPath: {{ .Values.pvc.subPath.subPathFile }}
+          {{- end }}
+      volumes:
+      - name: "{{ template "universal.fullname" . }}-universal-pvc"
+        persistentVolumeClaim:
+          claimName: "{{ template "universal.fullname" . }}-universal-pvc"
+{{- end }}

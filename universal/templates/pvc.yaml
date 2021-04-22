@@ -1,0 +1,20 @@
+{{- if .Values.pvc.enabled }}
+{{- $fullName := include "universal.fullname" . -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ template "universal.fullname" . }}-universal-ingress
+  labels:
+    app: "universal"
+    chart: {{ template "universal.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "{{ .Values.pvc.storageClass }}"
+spec:
+  accessModes:
+  - {{ .Values.pvc.accessModes }}
+  resources:
+    requests:
+      storage: {{ .Values.pvc.size }}
+{{- end }}

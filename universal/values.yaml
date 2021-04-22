@@ -10,3 +10,12 @@ secret:
 ingress:
   enabled: false
   hostname: universalchart.com # change it
+
+pvc:
+  enabled: false
+  storageClass: default
+  accessModes: ReadWriteOnce
+  size: 1Gi
+  mountPath: /opt/application-home
+  subPath: false
+    subPathFile: application.properties
