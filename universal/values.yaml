@@ -1,6 +1,7 @@
 app:
   port: 8080 # port
-  image: repository/image:tag
+  image: repository/image
+  tag: tag
 
 secret:
   enabled: false
