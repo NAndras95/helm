@@ -13,3 +13,5 @@ helm upgrade --install -f my-values.yaml --set name=universal universal ./univer
 ```
 **ToDo**
 - test this chart with different applications
+  - nginx done
+  - tomacat done
