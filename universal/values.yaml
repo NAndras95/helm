@@ -18,4 +18,4 @@ pvc:
   size: 1Gi
   mountPath: /opt/application-home
   subPath: false
-    subPathName: application.properties
+    subPathName: application-home
