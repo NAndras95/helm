@@ -11,3 +11,4 @@ helm upgrade --install -f my-values.yaml --set name=nginx-hello nginx-hello ./ng
 ```
 helm upgrade --install -f my-values.yaml --set name=universal universal ./universal
 ```
+Tested with `nginx` and `tomcat` images.
