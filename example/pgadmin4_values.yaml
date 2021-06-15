@@ -1,0 +1,18 @@
+image:
+  repository: dpage/pgadmin4
+  tag: "latest"
+
+variables:
+  pgadminDefaultEmail: changeme@sandbox.com
+  pgadminDefaultPassword: changeme
+
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - host: mysandbox.com
+      paths:
+      - path: /
+        backend:
+          serviceName: chart-example.local
+          servicePort: 80
