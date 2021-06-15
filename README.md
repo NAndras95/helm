@@ -1,17 +1,9 @@
 # My Helm Charts
 
-### nginx-hello
-**Usage**
-```sh
-helm upgrade --install -f my-values.yaml --set name=nginx-hello nginx-hello ./nginx-hello
-```
-
-### Universal
-**Usage**
-```sh
-helm upgrade --install -f my-values.yaml --set name=universal universal ./universal
-```
-Tested with `nginx` and `tomcat` images.
+### Charts
+- nginx-hello
+- universal
+- pgadmin4
 
 ### Add the helm repository
 ```sh
@@ -30,7 +22,15 @@ helm repo update
 # install from the helm repository
 helm install nginx-hello nandras95/nginx-hello --version 0.0.1 -f my-values.yaml
 ```
+
+### "Check out and use" method
+```sh
+# clone the repository and go to its folder
+helm upgrade --install -f my-values.yaml --set name=nginx-hello nginx-hello ./nginx-hello
+```
+
 ### Generate index.yaml
+This command needs me to update `index.yaml`.
 ```sh
 helm repo index --url https://nandras95.github.io/helm/ .
 ```
