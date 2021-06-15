@@ -3,21 +3,32 @@ entries:
   nginx-hello:
   - apiVersion: v1
     appVersion: "1.1"
-    created: "2021-06-15T20:45:03.495167+02:00"
+    created: "2021-06-15T22:23:17.772021+02:00"
     description: A Helm chart for nginx-hello
     digest: c55637bb20d98647a3b5826962079f34d8cd04eb3ec41996a36a2852c0ad2eb2
     name: nginx-hello
     urls:
     - https://nandras95.github.io/helm/nginx-hello-0.0.1.tgz
     version: 0.0.1
+  pgadmin4:
+  - apiVersion: v2
+    appVersion: "4"
+    created: "2021-06-15T22:23:17.772498+02:00"
+    description: A Helm chart for Kubernetes
+    digest: 7bc1b1d53fa55adcbd9d31db6fc01471a26489d41d0d7914dc0baaee3ecc72d0
+    name: pgadmin4
+    type: application
+    urls:
+    - https://nandras95.github.io/helm/pgadmin4-0.1.0.tgz
+    version: 0.1.0
   universal:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-15T20:45:03.495463+02:00"
+    created: "2021-06-15T22:23:17.772799+02:00"
     description: A Helm chart for universal
     digest: ad06b397eee44afb891592f1a2e632514954b51e5acd2baa8de2d85b5e86d22b
     name: universal
     urls:
     - https://nandras95.github.io/helm/universal-0.0.1.tgz
     version: 0.0.1
-generated: "2021-06-15T20:45:03.494775+02:00"
+generated: "2021-06-15T22:23:17.771618+02:00"
