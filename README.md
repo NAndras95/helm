@@ -6,10 +6,9 @@
 helm upgrade --install -f my-values.yaml --set name=nginx-hello nginx-hello ./nginx-hello
 ```
 
-### Universal (WIP)
+### Universal
 **Usage**
 ```
 helm upgrade --install -f my-values.yaml --set name=universal universal ./universal
 ```
-**ToDo**
-- test this chart with different applications
+Tested with `nginx` and `tomcat` images.
