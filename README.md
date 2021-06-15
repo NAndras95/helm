@@ -2,13 +2,13 @@
 
 ### nginx-hello
 **Usage**
-```
+```sh
 helm upgrade --install -f my-values.yaml --set name=nginx-hello nginx-hello ./nginx-hello
 ```
 
 ### Universal
 **Usage**
-```
+```sh
 helm upgrade --install -f my-values.yaml --set name=universal universal ./universal
 ```
 Tested with `nginx` and `tomcat` images.
@@ -29,4 +29,8 @@ helm repo update
 
 # install from the helm repository
 helm install nginx-hello nandras95/nginx-hello --version 0.0.1 -f my-values.yaml
+```
+### Generate index.yaml
+```sh
+helm repo index --url https://nandras95.github.io/helm/ .
 ```
