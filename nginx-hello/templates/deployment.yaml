@@ -4,7 +4,6 @@ metadata:
   name: {{ template "nginx-hello.fullname" . }}-nginx-deployment
   labels:
     app: "nginx"
-    chart: {{ template "nginx-hello.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -13,7 +12,6 @@ spec:
   selector:
     matchLabels:
       app: "nginx"
-      chart: {{ template "nginx-hello.chart" . }}
       release: {{ .Release.Name }}
       heritage: {{ .Release.Service }}
   strategy:
@@ -22,7 +20,6 @@ spec:
     metadata:
       labels:
         app: nginx
-        chart: {{ template "nginx-hello.chart" . }}
         release: {{ .Release.Name }}
         heritage: {{ .Release.Service }}
     spec:

@@ -5,7 +5,6 @@ metadata:
   name: {{ template "nginx-hello.fullname" . }}-nginx-ingress
   labels:
     app: "nginx"
-    chart: {{ template "nginx-hello.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:

@@ -4,7 +4,6 @@ metadata:
   name: {{ template "universal.fullname" . }}-universal-service
   labels:
     app: "universal"
-    chart: {{ template "universal.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -13,6 +12,5 @@ spec:
     port: {{ .Values.app.port }}
   selector:
     app: "universal"
-    chart: {{ template "universal.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}

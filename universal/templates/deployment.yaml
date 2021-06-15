@@ -4,7 +4,6 @@ metadata:
   name: {{ template "universal.fullname" . }}-universal-deployment
   labels:
     app: "universal"
-    chart: {{ template "universal.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -13,7 +12,6 @@ spec:
   selector:
     matchLabels:
       app: "universal"
-      chart: {{ template "universal.chart" . }}
       release: {{ .Release.Name }}
       heritage: {{ .Release.Service }}
   strategy:
@@ -22,7 +20,6 @@ spec:
     metadata:
       labels:
         app: universal
-        chart: {{ template "universal.chart" . }}
         release: {{ .Release.Name }}
         heritage: {{ .Release.Service }}
     spec:
@@ -42,7 +39,7 @@ spec:
         - name: "{{ template "universal.fullname" . }}-universal-pvc"
           mountPath: "{{ .Values.pvc.mountPath }}"
           {{- if .Values.pvc.subPath }}
-          subPath: {{ .Values.pvc.subPath.subPathName }}
+          subPath: {{ .Values.pvc.subPathName }}
           {{- end }}
       volumes:
       - name: "{{ template "universal.fullname" . }}-universal-pvc"

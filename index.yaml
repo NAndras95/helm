@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  nginx-hello:
+  - apiVersion: v1
+    appVersion: "1.1"
+    created: "2021-06-15T20:45:03.495167+02:00"
+    description: A Helm chart for nginx-hello
+    digest: c55637bb20d98647a3b5826962079f34d8cd04eb3ec41996a36a2852c0ad2eb2
+    name: nginx-hello
+    urls:
+    - https://nandras95.github.io/helm/nginx-hello-0.0.1.tgz
+    version: 0.0.1
+  universal:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-06-15T20:45:03.495463+02:00"
+    description: A Helm chart for universal
+    digest: ad06b397eee44afb891592f1a2e632514954b51e5acd2baa8de2d85b5e86d22b
+    name: universal
+    urls:
+    - https://nandras95.github.io/helm/universal-0.0.1.tgz
+    version: 0.0.1
+generated: "2021-06-15T20:45:03.494775+02:00"

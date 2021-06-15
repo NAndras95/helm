@@ -6,7 +6,6 @@ metadata:
   name: {{ template "universal.fullname" . }}-universal-pvc
   labels:
     app: "universal"
-    chart: {{ template "universal.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
