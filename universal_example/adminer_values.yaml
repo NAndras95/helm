@@ -1,0 +1,8 @@
+app:
+  port: 8080
+  image: adminer
+  tag: latest
+
+ingress:
+  enabled: true
+  hostname: adminer.mysandbox.com
